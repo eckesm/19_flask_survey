@@ -11,18 +11,18 @@
     <nav class="navbar">
         <a href="/">Survey</a>
     </nav>
-
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <section class="messages">
+        {% for category,msg in messages %}
+        <p class="{{category}}">{{msg}}</p>
+        {% endfor %}
+    </section>
+    {% endif %}
+    {% endwith %}
+    
     <main id="content">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        <section class="messages">
-            {% for category,msg in messages %}
-            <p class="{{category}}">{{msg}}</p>
-            {% endfor %}
-        </section>
-        {% endif %}
-        {% endwith %}
-        
         {% block content %}{% endblock %}    
     </main>
     

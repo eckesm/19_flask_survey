@@ -2,5 +2,9 @@
 {% block title %}Thank You{% endblock %}
 
 {% block content %}
-
+<ol>
+    {% for response in session['responses'] %}
+    <li><b>{{session['questions'][loop.index-1]}}</b> <i>{{response}}</i></li>
+    {% endfor %}
+</ol>
 {% endblock %}

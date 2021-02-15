@@ -3,8 +3,24 @@ body {
 	margin: 0;
 }
 
+h1 {
+	margin-top: 0px;
+}
+select {
+	width: 200px;
+}
+
 #content {
+	border: 1px solid black;
 	margin: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 500px;
+	max-width: 90vw;
+	background-color:lightsteelblue;
+	border-radius: 0.5rem;
 }
 
 .navbar {
@@ -24,13 +40,7 @@ body {
 .navbar a:hover {
 	background-color: #ddd;
 	color: black;
-	/* font-weight: bold; */
 }
-
-/* img {
-	max-width: 250px;
-	max-height: 250px;
-} */
 
 .messages p {
 	padding: 1rem;
@@ -46,4 +56,14 @@ body {
 }
 .messages .info {
 	background-color: rgba(0, 0, 255, 0.1);
+}
+
+#question_answers_div {
+	padding: 10px;
+	border: 1px solid black;
+	background-color: antiquewhite;
+}
+
+#questions_submit {
+	margin-top: 10px;
 }

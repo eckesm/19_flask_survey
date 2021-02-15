@@ -1,21 +1,31 @@
 {% extends 'base.html' %}
-{% block title %}Survey Start{% endblock %}
+{% block title %}Question {{number}}{% endblock %}
 
 {% block content %}
 
 <form action="/answer" method="POST">
     <h1>Question {{number}}</h1>
-    <input type="hidden" name="number" value="{{number}}">
     <p>{{question}}</p>
-    <div>
+    <div id="question_answers_div">
+        
         {% for choice in choices %}
         <div>
             <input type="radio" id="choice_{{loop.index}}" name="answer" value="{{choice}}">
             <label for="choice_{{loop.index}}">{{choice}}</label>
-        </div>
         {% endfor %}
+        
+        {% if allow_text==True %}
+            <!-- <input type="radio" id="choice_other" name="answer" value="other"> -->
+            <!-- <label for="choice_other">other:</label> -->
+            <br>
+            <br>
+            <label for="answer_other">Additional Information:</label>
+            <input type="text" name="answer_other" id="answer_other">
+        </div>
+        {% endif %}
+
     </div>
-    <button type="submit">Submit Answer</button>
+    <button id="questions_submit" type="submit">Submit Answer</button>
 </form>
 
 {% endblock %}
