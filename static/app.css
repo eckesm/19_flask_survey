@@ -19,8 +19,8 @@ select {
 	padding-bottom: 15px;
 	width: 500px;
 	max-width: 90vw;
-	background-color:lightsteelblue;
-	border-radius: 0.5rem;
+	background-color:rgba(176, 196, 222, 0.75);
+	border-radius: 0.25rem;
 }
 
 .navbar {

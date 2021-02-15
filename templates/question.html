@@ -5,18 +5,16 @@
 
 <form action="/answer" method="POST">
     <h1>Question {{number}}</h1>
-    <p>{{question}}</p>
+    <h3>{{question.question}}</h3>
     <div id="question_answers_div">
         
-        {% for choice in choices %}
+        {% for choice in question.choices %}
         <div>
             <input type="radio" id="choice_{{loop.index}}" name="answer" value="{{choice}}">
             <label for="choice_{{loop.index}}">{{choice}}</label>
         {% endfor %}
         
-        {% if allow_text==True %}
-            <!-- <input type="radio" id="choice_other" name="answer" value="other"> -->
-            <!-- <label for="choice_other">other:</label> -->
+        {% if question.allow_text==True %}
             <br>
             <br>
             <label for="answer_other">Additional Information:</label>
